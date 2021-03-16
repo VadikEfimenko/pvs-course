@@ -1,0 +1,24 @@
+digraph test {
+rankdir=LR;
+ranksep=0.1; nodesep=0.1; defaultdist = 0.1; len = 0.1;
+"init s" -> "wait" [label="EHLO"];
+"wait" -> "mail" [label="MAIL"];
+"mail" -> "rcpt" [label="RCPT"];
+"rcpt" -> "data" [label="DATA"];
+"wait" -> "wait" [label="RSET"];
+"rcpt" -> "rcpt" [label="RCPT"];
+"mail" -> "wait" [label="RSET"];
+"data" -> "close" [label="CFAIL"];
+"text" -> "wait" [label="RSET"];
+"init s" -> "close" [label="CFAIL"];
+"rcpt" -> "close" [label="CFAIL"];
+"text" -> "mail" [label="MAIL"];
+"data" -> "wait" [label="RSET"];
+"mail" -> "close" [label="CFAIL"];
+"init s" -> "wait" [label="HELO"];
+"wait" -> "close" [label="CFAIL"];
+"text" -> "close" [label="QUIT"];
+"rcpt" -> "wait" [label="RSET"];
+"data" -> "text" [label="TEXT"];
+"text" -> "close" [label="CFAIL"];
+}

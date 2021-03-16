@@ -1,0 +1,37 @@
+autogen definitions fsm;
+
+event = HELO, EHLO, MAIL, RCPT, DATA, RSET, QUIT, CFAIL, TEXT;
+state = init_s, wait, mail, rcpt, data, close, text;
+
+method = case;
+type = reentrant;
+cookie = "void *data";
+
+prefix = smtp_server_fsm;
+
+transition =
+{ tst = init_s; tev = HELO; next = wait; },
+{ tst = init_s; tev = EHLO; next = wait; },
+{ tst = init_s; tev = CFAIL; next = close; },
+
+{ tst = wait; tev = MAIL; next = mail; },
+{ tst = wait; tev = RSET; next = wait; },
+{ tst = wait; tev = CFAIL; next = close; },
+
+{ tst = mail; tev = RCPT; next = rcpt; },
+{ tst = mail; tev = RSET; next = wait; },
+{ tst = mail; tev = CFAIL; next = close; },
+
+{ tst = rcpt; tev = RCPT; next = rcpt; },
+{ tst = rcpt; tev = DATA; next = data; },
+{ tst = rcpt; tev = RSET; next = wait; },
+{ tst = rcpt; tev = CFAIL; next = close; },
+
+{ tst = data; tev = TEXT; next = text; },
+{ tst = data; tev = RSET; next = wait; },
+{ tst = data; tev = CFAIL; next = close; },
+
+{ tst = text; tev = RSET; next = wait; },
+{ tst = text; tev = MAIL; next = mail; },
+{ tst = text; tev = CFAIL; next = close; },
+{ tst = text; tev = QUIT; next = close; };

@@ -1,0 +1,170 @@
+digraph G {
+node [peripheries=2 style="filled,rounded" fontname="Vera Sans Mono" color="#eecc80"];
+rankdir=LR;
+label="../process/process.c"
+main [shape=box];
+create_processes[label="create_processes\n148" color="#eecc80" shape=box];
+
+create_process[label="create_process\n130" color="#eecc80" shape=ellipse];
+
+fork[label="fork" color="#ccee80" shape=octagon];
+
+body[label="body\n117" color="#ccee80" shape=octagon];
+
+init_process[label="init_process\n22" color="#80ccee" shape=hexagon];
+
+malloc[label="malloc" color="#eecc80" shape=diamond];
+
+getpid[label="getpid" color="#eecc80" shape=diamond];
+
+ctx_new[label="ctx_new" color="#eecc80" shape=diamond];
+
+sprintf[label="sprintf" color="#80ccee" shape=hexagon];
+
+log_info[label="log_info" color="#80ccee" shape=hexagon];
+
+run_process[label="run_process\n48" color="#80ccee" shape=hexagon];
+
+FD_ZERO[label="FD_ZERO" color="#eecc80" shape=diamond];
+
+FD_SET[label="FD_SET" color="#eecc80" shape=diamond];
+
+select[label="select" color="#eecc80" shape=diamond];
+
+log_error[label="log_error" color="#eecc80" shape=diamond];
+
+log_warn[label="log_warn" color="#eecc80" shape=diamond];
+
+FD_ISSET[label="FD_ISSET" color="#eecc80" shape=diamond];
+
+accept[label="accept" color="#eecc80" shape=diamond];
+
+perror[label="perror" color="#eecc80" shape=diamond];
+
+exit[label="exit" color="#eecc80" shape=diamond];
+
+inet_ntoa[label="inet_ntoa" color="#eecc80" shape=diamond];
+
+ntohs[label="ntohs" color="#eecc80" shape=diamond];
+
+send_greetings[label="send_greetings" color="#eecc80" shape=diamond];
+
+main_handler[label="main_handler" color="#eecc80" shape=diamond];
+
+close_process[label="close_process\n38" color="#80ccee" shape=hexagon];
+
+ctx_close[label="ctx_close" color="#eecc80" shape=diamond];
+
+free[label="free" color="#eecc80" shape=diamond];
+
+kill[label="kill" color="#80ccee" shape=hexagon];
+
+edge [color="#000000"];
+
+create_processes->create_process
+edge [color="#000000"];
+
+create_process->fork
+edge [color="#000000"];
+
+create_process->body
+edge [color="#000000"];
+
+create_process->sprintf
+edge [color="#000000"];
+
+create_process->getpid
+edge [color="#000000"];
+
+create_process->log_error
+edge [color="#000000"];
+
+create_process->log_info
+edge [color="#000000"];
+
+body->init_process
+edge [color="#000000"];
+
+body->sprintf
+edge [color="#000000"];
+
+body->getpid
+edge [color="#000000"];
+
+body->log_info
+edge [color="#000000"];
+
+body->run_process
+edge [color="#000000"];
+
+body->close_process
+edge [color="#000000"];
+
+body->kill
+edge [color="#000000"];
+
+init_process->malloc
+edge [color="#000000"];
+
+init_process->getpid
+edge [color="#000000"];
+
+init_process->ctx_new
+edge [color="#000000"];
+
+run_process->FD_ZERO
+edge [color="#000000"];
+
+run_process->FD_SET
+edge [color="#000000"];
+
+run_process->select
+edge [color="#000000"];
+
+run_process->log_error
+edge [color="#000000"];
+
+run_process->getpid
+edge [color="#000000"];
+
+run_process->sprintf
+edge [color="#000000"];
+
+run_process->log_warn
+edge [color="#000000"];
+
+run_process->FD_ISSET
+edge [color="#000000"];
+
+run_process->ctx_new
+edge [color="#000000"];
+
+run_process->accept
+edge [color="#000000"];
+
+run_process->perror
+edge [color="#000000"];
+
+run_process->exit
+edge [color="#000000"];
+
+run_process->inet_ntoa
+edge [color="#000000"];
+
+run_process->ntohs
+edge [color="#000000"];
+
+run_process->log_info
+edge [color="#000000"];
+
+run_process->send_greetings
+edge [color="#000000"];
+
+run_process->main_handler
+edge [color="#000000"];
+
+close_process->ctx_close
+edge [color="#000000"];
+
+close_process->free
+}

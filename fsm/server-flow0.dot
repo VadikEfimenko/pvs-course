@@ -1,0 +1,159 @@
+digraph G {
+node [peripheries=2 style="filled,rounded" fontname="Vera Sans Mono" color="#eecc80"];
+rankdir=LR;
+label="../main.c"
+main [shape=box];
+main[label="main\n28" color="#eecc80" shape=box];
+
+malloc[label="malloc" color="#eecc80" shape=ellipse];
+
+ini_parse[label="ini_parse" color="#eecc80" shape=ellipse];
+
+printf[label="printf" color="#eecc80" shape=ellipse];
+
+calloc[label="calloc" color="#eecc80" shape=ellipse];
+
+ftok[label="ftok" color="#eecc80" shape=ellipse];
+
+msgget[label="msgget" color="#eecc80" shape=ellipse];
+
+NewLoggerData[label="NewLoggerData" color="#eecc80" shape=ellipse];
+
+fprintf[label="fprintf" color="#eecc80" shape=ellipse];
+
+graceful_exit[label="graceful_exit\n17" color="#eecc80" shape=ellipse];
+
+free[label="free" color="#ccee80" shape=octagon];
+
+close[label="close" color="#ccee80" shape=octagon];
+
+perror[label="perror" color="#ccee80" shape=octagon];
+
+FreeLoggerContext[label="FreeLoggerContext" color="#ccee80" shape=octagon];
+
+log_info[label="log_info" color="#ccee80" shape=octagon];
+
+getpid[label="getpid" color="#ccee80" shape=octagon];
+
+exit[label="exit" color="#ccee80" shape=octagon];
+
+socket[label="socket" color="#eecc80" shape=ellipse];
+
+setsockopt[label="setsockopt" color="#eecc80" shape=ellipse];
+
+fcntl[label="fcntl" color="#eecc80" shape=ellipse];
+
+memset[label="memset" color="#eecc80" shape=ellipse];
+
+htonl[label="htonl" color="#eecc80" shape=ellipse];
+
+htons[label="htons" color="#eecc80" shape=ellipse];
+
+bind[label="bind" color="#eecc80" shape=ellipse];
+
+listen[label="listen" color="#eecc80" shape=ellipse];
+
+pthread_create[label="pthread_create" color="#eecc80" shape=ellipse];
+
+ServerShutdown[label="ServerShutdown" color="#eecc80" shape=ellipse];
+
+create_processes[label="create_processes" color="#eecc80" shape=ellipse];
+
+signal[label="signal" color="#eecc80" shape=ellipse];
+
+sleep[label="sleep" color="#eecc80" shape=ellipse];
+
+edge [color="#000000"];
+
+main->malloc
+edge [color="#000000"];
+
+main->ini_parse
+edge [color="#000000"];
+
+main->printf
+edge [color="#000000"];
+
+main->calloc
+edge [color="#000000"];
+
+main->ftok
+edge [color="#000000"];
+
+main->msgget
+edge [color="#000000"];
+
+main->NewLoggerData
+edge [color="#000000"];
+
+main->fprintf
+edge [color="#000000"];
+
+main->graceful_exit
+edge [color="#000000"];
+
+main->socket
+edge [color="#000000"];
+
+main->perror
+edge [color="#000000"];
+
+main->exit
+edge [color="#000000"];
+
+main->setsockopt
+edge [color="#000000"];
+
+main->fcntl
+edge [color="#000000"];
+
+main->memset
+edge [color="#000000"];
+
+main->htonl
+edge [color="#000000"];
+
+main->htons
+edge [color="#000000"];
+
+main->bind
+edge [color="#000000"];
+
+main->listen
+edge [color="#000000"];
+
+main->pthread_create
+edge [color="#000000"];
+
+main->ServerShutdown
+edge [color="#000000"];
+
+main->create_processes
+edge [color="#000000"];
+
+main->signal
+edge [color="#000000"];
+
+main->sleep
+edge [color="#000000"];
+
+graceful_exit->free
+edge [color="#000000"];
+
+graceful_exit->close
+edge [color="#000000"];
+
+graceful_exit->perror
+edge [color="#000000"];
+
+graceful_exit->FreeLoggerContext
+edge [color="#000000"];
+
+graceful_exit->log_info
+edge [color="#000000"];
+
+graceful_exit->getpid
+edge [color="#000000"];
+
+graceful_exit->exit
+}

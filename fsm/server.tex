@@ -1,0 +1,84 @@
+\documentclass{article}
+\usepackage[x11names, svgnames, rgb]{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{snakes,arrows,shapes}
+\usepackage{amsmath}
+%
+%
+
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{0pt}%
+
+%
+
+\begin{document}
+\pagestyle{empty}
+%
+%
+%
+
+\enlargethispage{100cm}
+% Start of code
+\begin{tikzpicture}[>=latex',line join=bevel,]
+%%
+\node (init s) at (20.5bp,122.0bp) [draw,ellipse] {init s};
+  \node (wait) at (115.0bp,92.0bp) [draw,ellipse] {wait};
+  \node (close) at (594.5bp,99.0bp) [draw,ellipse] {close};
+  \node (mail) at (206.0bp,29.0bp) [draw,ellipse] {mail};
+  \node (rcpt) at (301.5bp,92.0bp) [draw,ellipse] {rcpt};
+  \node (data) at (399.5bp,96.0bp) [draw,ellipse] {data};
+  \node (text) at (497.5bp,56.0bp) [draw,ellipse] {text};
+  \draw [->] (init s) ..controls (54.971bp,120.24bp) and (73.727bp,117.56bp)  .. (89.0bp,111.0bp) .. controls (91.818bp,109.79bp) and (94.604bp,108.19bp)  .. (wait);
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (69.0bp,130.0bp) node {EHLO};
+  \draw [->] (init s) ..controls (31.733bp,105.58bp) and (39.428bp,96.211bp)  .. (49.0bp,92.0bp) .. controls (61.064bp,86.693bp) and (75.648bp,86.228bp)  .. (wait);
+  \draw (69.0bp,101.0bp) node {HELO};
+  \draw [->] (init s) ..controls (40.166bp,150.1bp) and (73.714bp,193.0bp)  .. (114.0bp,193.0bp) .. controls (114.0bp,193.0bp) and (114.0bp,193.0bp)  .. (498.5bp,193.0bp) .. controls (534.45bp,193.0bp) and (542.64bp,176.43bp)  .. (567.0bp,150.0bp) .. controls (575.42bp,140.87bp) and (581.92bp,128.55bp)  .. (close);
+  \draw (301.5bp,202.0bp) node {CFAIL};
+  \draw [->] (wait) ..controls (105.96bp,104.82bp) and (108.64bp,108.5bp)  .. (115.0bp,108.5bp) .. controls (115.6bp,108.5bp) and (116.16bp,108.47bp)  .. (wait);
+  \draw (115.0bp,117.5bp) node {RSET};
+  \draw [->] (wait) ..controls (116.63bp,66.148bp) and (120.51bp,33.642bp)  .. (141.0bp,19.0bp) .. controls (153.1bp,10.351bp) and (169.79bp,13.311bp)  .. (mail);
+  \draw (160.0bp,28.0bp) node {MAIL};
+  \draw [->] (wait) ..controls (133.1bp,120.83bp) and (164.81bp,166.0bp)  .. (205.0bp,166.0bp) .. controls (205.0bp,166.0bp) and (205.0bp,166.0bp)  .. (498.5bp,166.0bp) .. controls (532.96bp,166.0bp) and (563.71bp,136.2bp)  .. (close);
+  \draw (350.5bp,175.0bp) node {CFAIL};
+  \draw [->] (mail) ..controls (172.63bp,36.513bp) and (148.46bp,43.046bp)  .. (141.0bp,49.0bp) .. controls (133.14bp,55.272bp) and (127.26bp,64.734bp)  .. (wait);
+  \draw (160.0bp,58.0bp) node {RSET};
+  \draw [->] (mail) ..controls (233.07bp,43.399bp) and (255.13bp,56.22bp)  .. (273.0bp,69.0bp) .. controls (276.43bp,71.455bp) and (279.98bp,74.223bp)  .. (rcpt);
+  \draw (253.0bp,78.0bp) node {RCPT};
+  \draw [->] (mail) ..controls (237.24bp,13.863bp) and (270.42bp,0.0bp)  .. (300.5bp,0.0bp) .. controls (300.5bp,0.0bp) and (300.5bp,0.0bp)  .. (498.5bp,0.0bp) .. controls (533.1bp,0.0bp) and (543.68bp,11.441bp)  .. (567.0bp,37.0bp) .. controls (577.85bp,48.889bp) and (584.69bp,65.893bp)  .. (close);
+  \draw (399.5bp,9.0bp) node {CFAIL};
+  \draw [->] (rcpt) ..controls (251.81bp,92.0bp) and (181.77bp,92.0bp)  .. (wait);
+  \draw (206.0bp,101.0bp) node {RSET};
+  \draw [->] (rcpt) ..controls (291.64bp,105.6bp) and (294.56bp,109.5bp)  .. (301.5bp,109.5bp) .. controls (302.48bp,109.5bp) and (303.37bp,109.42bp)  .. (rcpt);
+  \draw (301.5bp,118.5bp) node {RCPT};
+  \draw [->] (rcpt) ..controls (333.41bp,93.288bp) and (354.06bp,94.148bp)  .. (data);
+  \draw (350.5bp,104.0bp) node {DATA};
+  \draw [->] (rcpt) ..controls (315.77bp,105.83bp) and (322.64bp,111.33bp)  .. (330.0bp,114.0bp) .. controls (408.57bp,142.46bp) and (435.01bp,126.76bp)  .. (518.0bp,117.0bp) .. controls (534.8bp,115.03bp) and (553.28bp,110.66bp)  .. (close);
+  \draw (448.5bp,139.0bp) node {CFAIL};
+  \draw [->] (data) ..controls (375.23bp,115.45bp) and (348.66bp,134.92bp)  .. (322.0bp,142.0bp) .. controls (304.39bp,146.68bp) and (299.03bp,144.67bp)  .. (281.0bp,142.0bp) .. controls (229.13bp,134.31bp) and (170.98bp,113.73bp)  .. (wait);
+  \draw (253.0bp,149.0bp) node {RSET};
+  \draw [->] (data) ..controls (451.81bp,96.797bp) and (524.43bp,97.926bp)  .. (close);
+  \draw (497.5bp,107.0bp) node {CFAIL};
+  \draw [->] (data) ..controls (415.2bp,83.712bp) and (421.64bp,79.122bp)  .. (428.0bp,76.0bp) .. controls (441.69bp,69.279bp) and (458.05bp,64.397bp)  .. (text);
+  \draw (448.5bp,85.0bp) node {TEXT};
+  \draw [->] (text) ..controls (444.78bp,49.779bp) and (353.86bp,42.086bp)  .. (281.0bp,60.0bp) .. controls (277.14bp,60.949bp) and (276.77bp,62.749bp)  .. (273.0bp,64.0bp) .. controls (228.8bp,78.65bp) and (174.92bp,86.135bp)  .. (wait);
+  \draw (301.5bp,69.0bp) node {RSET};
+  \draw [->] (text) ..controls (458.13bp,47.126bp) and (411.32bp,37.161bp)  .. (371.0bp,33.0bp) .. controls (323.15bp,28.062bp) and (267.05bp,27.899bp)  .. (mail);
+  \draw (350.5bp,42.0bp) node {MAIL};
+  \draw [->] (text) ..controls (528.74bp,60.104bp) and (550.34bp,64.752bp)  .. (567.0bp,74.0bp) .. controls (571.22bp,76.342bp) and (575.28bp,79.509bp)  .. (close);
+  \draw (546.5bp,84.0bp) node {QUIT};
+  \draw [->] (text) ..controls (523.37bp,41.437bp) and (548.99bp,30.511bp)  .. (567.0bp,42.0bp) .. controls (579.65bp,50.07bp) and (586.36bp,65.914bp)  .. (close);
+  \draw (546.5bp,51.0bp) node {CFAIL};
+%
+\end{tikzpicture}
+% End of code
+
+%
+\end{document}
+%
+
+
+

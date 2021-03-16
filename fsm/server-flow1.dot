@@ -1,0 +1,438 @@
+digraph G {
+node [peripheries=2 style="filled,rounded" fontname="Vera Sans Mono" color="#eecc80"];
+rankdir=LR;
+label="../fsm/socket.c"
+main [shape=box];
+main_handler[label="main_handler\n16" color="#eecc80" shape=box];
+
+check_connection[label="check_connection\n27" color="#eecc80" shape=ellipse];
+
+recv[label="recv" color="#ccee80" shape=octagon];
+
+sprintf[label="sprintf" color="#ccee80" shape=octagon];
+
+getpid[label="getpid" color="#ccee80" shape=octagon];
+
+log_info[label="log_info" color="#ccee80" shape=octagon];
+
+ctx_close[label="ctx_close" color="#ccee80" shape=octagon];
+
+ctx_new[label="ctx_new" color="#ccee80" shape=octagon];
+
+receive_data[label="receive_data\n59" color="#eecc80" shape=ellipse];
+
+ctx_read[label="ctx_read" color="#ccee80" shape=octagon];
+
+ctx_pop_msg[label="ctx_pop_msg" color="#ccee80" shape=octagon];
+
+key_switcher[label="key_switcher\n121" color="#ccee80" shape=octagon];
+
+detect_keyword[label="detect_keyword\n76" color="#80ccee" shape=hexagon];
+
+sdssplitlen[label="sdssplitlen" color="#eecc80" shape=diamond];
+
+sdslen[label="sdslen" color="#eecc80" shape=diamond];
+
+strlen[label="strlen" color="#eecc80" shape=diamond];
+
+strcmp[label="strcmp" color="#eecc80" shape=diamond];
+
+sdsfreesplitres[label="sdsfreesplitres" color="#eecc80" shape=diamond];
+
+HELO_handler[label="HELO_handler\n154" color="#80ccee" shape=hexagon];
+
+ERROR_handler[label="ERROR_handler\n273" color="#eecc80" shape=diamond];
+
+ctx_push_msg[label="ctx_push_msg" color="#80eecc" shape=box];
+
+sdscatprintf[label="sdscatprintf" color="#eecc80" shape=diamond];
+
+sdsempty[label="sdsempty" color="#eecc80" shape=diamond];
+
+EHLO_handler[label="EHLO_handler\n168" color="#80ccee" shape=hexagon];
+
+MAIL_handler[label="MAIL_handler\n184" color="#80ccee" shape=hexagon];
+
+create_file[label="create_file\n278" color="#eecc80" shape=diamond];
+
+stat[label="stat" color="#80eecc" shape=box];
+
+mkdir[label="mkdir" color="#80eecc" shape=box];
+
+time[label="time" color="#80eecc" shape=box];
+
+localtime[label="localtime" color="#80eecc" shape=box];
+
+strftime[label="strftime" color="#80eecc" shape=box];
+
+fopen[label="fopen" color="#80eecc" shape=box];
+
+fprintf[label="fprintf" color="#80eecc" shape=box];
+
+fclose[label="fclose" color="#80eecc" shape=box];
+
+sdsfree[label="sdsfree" color="#80eecc" shape=box];
+
+sdsclear[label="sdsclear" color="#eecc80" shape=diamond];
+
+sdsnew[label="sdsnew" color="#eecc80" shape=diamond];
+
+RCPT_handler[label="RCPT_handler\n207" color="#80ccee" shape=hexagon];
+
+sdsdup[label="sdsdup" color="#eecc80" shape=diamond];
+
+sdstrim[label="sdstrim" color="#eecc80" shape=diamond];
+
+check_user[label="check_user\n320" color="#eecc80" shape=diamond];
+
+sdscmp[label="sdscmp" color="#80eecc" shape=box];
+
+sdscat[label="sdscat" color="#eecc80" shape=diamond];
+
+DATA_handler[label="DATA_handler\n232" color="#80ccee" shape=hexagon];
+
+TEXT_handler[label="TEXT_handler\n240" color="#80ccee" shape=hexagon];
+
+sdscatsds[label="sdscatsds" color="#eecc80" shape=diamond];
+
+QUIT_handler[label="QUIT_handler\n257" color="#80ccee" shape=hexagon];
+
+RSET_handler[label="RSET_handler\n265" color="#80ccee" shape=hexagon];
+
+send_data[label="send_data\n49" color="#eecc80" shape=ellipse];
+
+ctx_write[label="ctx_write" color="#ccee80" shape=octagon];
+
+send_greetings[label="send_greetings\n38" color="#eecc80" shape=box];
+
+edge [color="#000000"];
+
+main_handler->check_connection
+edge [color="#000000"];
+
+main_handler->receive_data
+edge [color="#000000"];
+
+main_handler->send_data
+edge [color="#000000"];
+
+check_connection->recv
+edge [color="#000000"];
+
+check_connection->sprintf
+edge [color="#000000"];
+
+check_connection->getpid
+edge [color="#000000"];
+
+check_connection->log_info
+edge [color="#000000"];
+
+check_connection->ctx_close
+edge [color="#000000"];
+
+check_connection->ctx_new
+edge [color="#000000"];
+
+receive_data->ctx_read
+edge [color="#000000"];
+
+receive_data->ctx_pop_msg
+edge [color="#000000"];
+
+receive_data->sprintf
+edge [color="#000000"];
+
+receive_data->log_info
+edge [color="#000000"];
+
+receive_data->getpid
+edge [color="#000000"];
+
+receive_data->key_switcher
+edge [color="#000000"];
+
+key_switcher->detect_keyword
+edge [color="#000000"];
+
+key_switcher->HELO_handler
+edge [color="#000000"];
+
+key_switcher->EHLO_handler
+edge [color="#000000"];
+
+key_switcher->MAIL_handler
+edge [color="#000000"];
+
+key_switcher->RCPT_handler
+edge [color="#000000"];
+
+key_switcher->DATA_handler
+edge [color="#000000"];
+
+key_switcher->TEXT_handler
+edge [color="#000000"];
+
+key_switcher->QUIT_handler
+edge [color="#000000"];
+
+key_switcher->RSET_handler
+edge [color="#000000"];
+
+key_switcher->ERROR_handler
+edge [color="#000000"];
+
+detect_keyword->sdssplitlen
+edge [color="#000000"];
+
+detect_keyword->sdslen
+edge [color="#000000"];
+
+detect_keyword->strlen
+edge [color="#000000"];
+
+detect_keyword->strcmp
+edge [color="#000000"];
+
+detect_keyword->sdsfreesplitres
+edge [color="#000000"];
+
+HELO_handler->ERROR_handler
+edge [color="#000000"];
+
+HELO_handler->sdssplitlen
+edge [color="#000000"];
+
+HELO_handler->sdslen
+edge [color="#000000"];
+
+HELO_handler->strlen
+edge [color="#000000"];
+
+HELO_handler->sdscatprintf
+edge [color="#000000"];
+
+HELO_handler->sdsempty
+edge [color="#000000"];
+
+HELO_handler->ctx_push_msg
+edge [color="#000000"];
+
+HELO_handler->sdsfreesplitres
+edge [color="#000000"];
+
+ERROR_handler->ctx_push_msg
+edge [color="#000000"];
+
+EHLO_handler->ERROR_handler
+edge [color="#000000"];
+
+EHLO_handler->sdssplitlen
+edge [color="#000000"];
+
+EHLO_handler->sdslen
+edge [color="#000000"];
+
+EHLO_handler->strlen
+edge [color="#000000"];
+
+EHLO_handler->sdscatprintf
+edge [color="#000000"];
+
+EHLO_handler->sdsempty
+edge [color="#000000"];
+
+EHLO_handler->ctx_push_msg
+edge [color="#000000"];
+
+EHLO_handler->sdsfreesplitres
+edge [color="#000000"];
+
+MAIL_handler->ERROR_handler
+edge [color="#000000"];
+
+MAIL_handler->create_file
+edge [color="#000000"];
+
+MAIL_handler->sdsclear
+edge [color="#000000"];
+
+MAIL_handler->sdssplitlen
+edge [color="#000000"];
+
+MAIL_handler->sdslen
+edge [color="#000000"];
+
+MAIL_handler->strlen
+edge [color="#000000"];
+
+MAIL_handler->sdsnew
+edge [color="#000000"];
+
+MAIL_handler->sdscatprintf
+edge [color="#000000"];
+
+MAIL_handler->sdsempty
+edge [color="#000000"];
+
+MAIL_handler->ctx_push_msg
+edge [color="#000000"];
+
+MAIL_handler->sdsfreesplitres
+edge [color="#000000"];
+
+create_file->sdssplitlen
+edge [color="#000000"];
+
+create_file->sdslen
+edge [color="#000000"];
+
+create_file->strlen
+edge [color="#000000"];
+
+create_file->stat
+edge [color="#000000"];
+
+create_file->mkdir
+edge [color="#000000"];
+
+create_file->sdscatprintf
+edge [color="#000000"];
+
+create_file->sdsempty
+edge [color="#000000"];
+
+create_file->time
+edge [color="#000000"];
+
+create_file->localtime
+edge [color="#000000"];
+
+create_file->strftime
+edge [color="#000000"];
+
+create_file->fopen
+edge [color="#000000"];
+
+create_file->fprintf
+edge [color="#000000"];
+
+create_file->fclose
+edge [color="#000000"];
+
+create_file->sdsfree
+edge [color="#000000"];
+
+create_file->sdsfreesplitres
+edge [color="#000000"];
+
+RCPT_handler->ERROR_handler
+edge [color="#000000"];
+
+RCPT_handler->sdssplitlen
+edge [color="#000000"];
+
+RCPT_handler->sdslen
+edge [color="#000000"];
+
+RCPT_handler->strlen
+edge [color="#000000"];
+
+RCPT_handler->sdsdup
+edge [color="#000000"];
+
+RCPT_handler->sdstrim
+edge [color="#000000"];
+
+RCPT_handler->check_user
+edge [color="#000000"];
+
+RCPT_handler->sdscat
+edge [color="#000000"];
+
+RCPT_handler->ctx_push_msg
+edge [color="#000000"];
+
+RCPT_handler->sdsfree
+edge [color="#000000"];
+
+RCPT_handler->sdsfreesplitres
+edge [color="#000000"];
+
+check_user->sdsnew
+edge [color="#000000"];
+
+check_user->sdssplitlen
+edge [color="#000000"];
+
+check_user->sdslen
+edge [color="#000000"];
+
+check_user->strlen
+edge [color="#000000"];
+
+check_user->sdscmp
+edge [color="#000000"];
+
+check_user->sdsfreesplitres
+edge [color="#000000"];
+
+check_user->sdsfree
+edge [color="#000000"];
+
+DATA_handler->ctx_push_msg
+edge [color="#000000"];
+
+DATA_handler->ERROR_handler
+edge [color="#000000"];
+
+TEXT_handler->sdsnew
+edge [color="#000000"];
+
+TEXT_handler->sdscmp
+edge [color="#000000"];
+
+TEXT_handler->ctx_push_msg
+edge [color="#000000"];
+
+TEXT_handler->sdscatsds
+edge [color="#000000"];
+
+TEXT_handler->sdsfree
+edge [color="#000000"];
+
+TEXT_handler->ERROR_handler
+edge [color="#000000"];
+
+QUIT_handler->ERROR_handler
+edge [color="#000000"];
+
+QUIT_handler->ctx_push_msg
+edge [color="#000000"];
+
+QUIT_handler->create_file
+edge [color="#000000"];
+
+RSET_handler->ctx_push_msg
+edge [color="#000000"];
+
+RSET_handler->sdsclear
+edge [color="#000000"];
+
+send_data->ctx_write
+edge [color="#000000"];
+
+send_data->sprintf
+edge [color="#000000"];
+
+send_data->log_info
+edge [color="#000000"];
+
+send_data->getpid
+edge [color="#000000"];
+
+send_greetings->sprintf
+edge [color="#000000"];
+
+send_greetings->ctx_push_msg
+}
